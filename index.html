@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.jpg" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>ACE++: Instruction-Based Image Creation and Editing via Context-Aware Content Filling</title>
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">
+              <img src="static/images/icon.png" class="title_icon">++: Instruction-Based Image Creation and Editing via Context-Aware Content Filling</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="" target="_blank">Chaojie Mao</a><sup>*†</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Jingfeng Zhang</a><sup>*</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Yulin Pan</a><sup>*</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Zeyinzi Jiang</a><sup>*</sup>,</span>
+                <span class="author-block">
+                <a href="" target="_blank">Zhen Han</a><sup>*</sup>,</span>
+                  </div>
+              <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="" target="_blank">Yu Liu</a>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Jingren Zhou</a></span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Tongyi Lab</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution
+                        <sup>†</sup> Project leader.</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Supplementary PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+          <div class="button-container">
+                <button class="button-simple" onclick="scrollToSection('subject_section')">Subject-Driven</button>
+                <button class="button-simple" onclick="scrollToSection('portrait_section')">Portrait-Consistency</button>
+                <button class="button-simple" onclick="scrollToSection('general_section')">Flexible ins./des.</button>
+                <button class="button-simple" onclick="scrollToSection('local_section')">Local Editing</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We report ACE++, an instruction-based diffusion framework that tackles various image generation and editing tasks.
+              Inspired by the input format for the inpainting task proposed by FLUX.1-Fill-dev,
+              we improve the Long-context Condition Unit (LCU) introduced in ACE and extend this input paradigm to any editing and generation tasks.
+              To take full advantage of image generative priors, we develop a two-stage training scheme to minimize the efforts of finetuning powerful text-to-image diffusion models like FLUX.1-dev.
+              In the first stage, we pre-train the model using task data with the 0-ref task from the text-to-image model. There are many models in the community based on the post-training of text-to-image foundational models that meet the training paradigm of the first stage.
+              For instance, FLUX.1-Fill-dev primarily deals with inpainting tasks and can be used as the initialization to accelerate the training process. In the second stage, we fine-tune the above model to support the general instructions using all tasks defined in ACE.
+              To promote the widespread application of ACE++ in different scenarios, we provide a comprehensive set of models that cover both fully fine-tuning and lightweight fine-tuning, while considering general applicability and applicability in vertical scenarios.
+              The qualitative analysis showcases the superiority of ACE++ in terms of generating image quality and prompt following ability.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Method -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/method++.png" alt="method"/>
+    </div>
+  </div>
+</section>
+<!-- End Method -->
+
+
+<!-- Subject Editing -->
+<section id="subject_section" class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Subject-Driven Generation</h2>
+      <div id="subject-carousel" class="carousel results-carousel">
+       <div class="item">
+           <div class="grid_container">
+                <div class="grid_item">
+                    <img src="static/images/subject/input/test_cartoon_1.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/cartoon_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The duck is walking on the road with many shops on both sides, anime style.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/cartoon_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The duck sit on beach chairs drinking drinks, with coconut trees and the sea behind, anime style.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/cartoon_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The duck sits on the sofa in the living room with many indoor decorations.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/cartoon_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The duck is riding a skateboard in a skate park filled with colorful graffiti, anime style.
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/subject/input/17160902d2nl.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/logo_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Show the logo printed elegantly on the front of a premium product box, nestled among natural elements like leaves and wood to reflect an eco-friendly brand.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/logo_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Incorporate the logo into a stylish name badge hanging from a lanyard, worn by participants at a professional conference with a bright and enaging background.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/logo_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Render the logo in dynamic animation on a digital billboard, showcasing it in a colorful urban landscape as commuters pass by during evening rush hour.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/logo_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Display the logo in a minimalist style printed in white on a matte black ceramic coffee mug, alongside a steaming cup of coffee on a cozy cafe table.
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/subject/input/test_ip_2.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/ip_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The girl's pattern is printed on the computer screen and the packing box on the table, with rich anime elements.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/ip_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The girl’s style acrylic standing plaque is placed in front of the computer on the desk.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/ip_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Print the girl's design on a handsome off-road vehicle, with the streets of the city behind it.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/ip_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 8px;" class="subtitle has-text-centered">
+                        The casing of a desktop computer from ASUS features a design of this cartoon girl. The main unit is placed on the desk, with a close-up
+                        showcasing the design details of the case. The girl's pattern blends seamlessly with the exterior of the unit. The transparent case
+                        design allows the internal hardware to be clearly visible, with blinking LED lights highlighting the details of the graphics card, motherboard, and other components.
+                    </h4>
+                </div>
+            </div>
+       </div>
+      <div class="item">
+           <div class="grid_container">
+                <div class="grid_item">
+                    <img src="static/images/subject/input/test_icon_1.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/icon_4.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Attach this icon to the top right corner of a pair of jeans, product image.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/icon_1.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Place this icon in the center of a sleek black leather wallet on a wooden table.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/icon_2.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Stick this icon to the right sleeve of a stylish red sports jacket hanging in a vibrant urban alley.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/icon_3.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Stick this icon on the tag hanging on the fashionable red jacket.
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/subject/input/test_toy_1.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/toy_4.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        the furry duck toy wears a blue sweater, is placed on a bookshelf nearby a television.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/toy_1.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Plush ducks are placed on Spider Man's head and shuttle through the city with him.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/toy_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Plush ducks are drifting on the sea surface in a small boat.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/toy_2.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Plush duck toy wearing sunglasses, placed next to vinyl record, rock style.
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/subject/input/test_creative_1.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/creative_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The fox is standing with Snow White in front of a cartoon castle gate.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/creative_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Make this fox become a twin fox. They are in the office, with one fox looking at his watch.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/creative_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        There is a fox on the pedestrian street of the city, surrounded by people coming and going.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/subject/output/creative_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        The fox pendant is hanging next to the backpack, with a close-up of the fox pendant and a blurred background.
+                    </h4>
+                </div>
+            </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Subject Editing -->
+
+
+<!-- Portrait Editing -->
+<section id="portrait_section" class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Portrait-Consistency Generation</h2>
+      <div id="subject-carousel" class="carousel results-carousel">
+       <div class="item">
+           <div class="grid_container">
+                <div class="grid_item">
+                    <img src="static/images/face/input/human_1.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_1_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Dress the character in the image with elf ears and a wizard's robe, transforming them into a mage character from a fantasy world.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_1_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Make the character in the image embody the goddess Artemis, adorned in ancient Greek-style clothing, showcasing elegance and strength.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_1_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 9px;" class="subtitle has-text-centered">
+                        (Seed: xxx) Maintain the facial features,  A girl is wearing a neat police uniform with "HOPPS" labeled on it and sporting a badge with a cute Disney cartoon style like Officer Judy Hopps from "Zootopia". She has large, bright purple eyes, smiling with a friendly and confident demeanor. She stands in front of a microphone, seemingly giving a speech or presentation, with lively gestures that convey positive emotions. The background is blurred, featuring a cartoon logo of "Police Department".
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_1_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 9px;" class="subtitle has-text-centered">
+                        (Seed: yyy) Maintain the facial features,  A girl is wearing a neat police uniform with "HOPPS" labeled on it and sporting a badge with a cute Disney cartoon style like Officer Judy Hopps from "Zootopia". She has large, bright purple eyes, smiling with a friendly and confident demeanor. She stands in front of a microphone, seemingly giving a speech or presentation, with lively gestures that convey positive emotions. The background is blurred, featuring a cartoon logo of "Police Department".
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/face/input/human_2.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_2_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Keep the characters in the picture unchanged and switch the background to Chinese architecture.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_2_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Transform the character into a modern athlete, wearing shiny sportswear.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_2_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Replace the character's clothing with a Chinese traditional clothing, with an ancient teahouse in the background.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_2_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Insert the character into Grant Wood’s "American Gothic" scene, filled with a rural atmosphere.
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/face/input/human_3.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_3_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Replace the character's outfit with an Indian sari and place her in a colorful market.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_3_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 8px;" class="subtitle has-text-centered">
+                        the man like muscular superhero character standing confidently in an underwater setting. He is dressed in a striking
+                        metallic costume featuring green and gold hues, designed with intricate patterns that evoke a sense of aquatic origins. The
+                        character holds a powerful trident in one hand and a shield in the other, emphasizing his role as a protector of the seas. Water splashes around him, enhancing the dynamic and heroic
+                        atmosphere of the scene. His flowing hair adds to the dramatic effect, highlighting his fierce demeanor as he prepares for action in the depths of the ocean.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_3_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 8px;" class="subtitle has-text-centered">
+                        the person seated at a chessboard, holding a knight piece in their hand. The chess setup includes a mix of wooden and lightcolored
+                        pieces, creating a contrast against a polished wooden table. Surrounding the chessboard are various small bottles, likely containing different liquids, suggesting an assortment of
+                        beverages or condiments. The person is dressed in a simple black shirt with a white collar, exuding a vintage or classic aesthetic, and has short, styled hair. The backdrop is a muted gray.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_3_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Replace the character's clothing with classic Western cowboy attire, holding a guitar by the campfire.
+                    </h4>
+                </div>
+            </div>
+       </div>
+      <div class="item">
+           <div class="grid_container">
+                <div class="grid_item">
+                    <img src="static/images/face/input/human_4.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_4_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Dress the character in the image with elf ears and a wizard's robe, transforming them into a mage character from a fantasy world.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_4_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 8px;" class="subtitle has-text-centered">
+                        The man, with his white hair billowing in the gentle breeze, glides down the sunlit street on his sleek white electric scooter, a picture
+                        of carefree joy. He’s dressed in a light blue shirt and comfortable jeans, exuding a relaxed charm as he makes his way to the local
+                        market to pick up groceries. The pleasant weather adds to his contentment, with birds chirping and the sun casting a warm glow. Behind him, a colorful roadside vendor displays vibrant
+                        fruits and fresh flowers, creating a lively scene. The man smiles at the vendor, appreciating the community spirit around him, as he feels the excitement of a simple errand that brightens his day.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_4_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Dress the character in old-fashioned pirate attire, standing inside a ship's cabin.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_4_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Dress the character in the image in Harry Potter's wizarding robes, holding a wand as if casting a spell.
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/face/input/human_5.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_5_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Transform the character in the image into Superman, wearing a blue jumpsuit, a red cape, and featuring the Superman logo on the chest.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_5_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 8px;" class="subtitle has-text-centered">
+                        the man dressed in traditional attire inspired by historical Asian clothing. He has a decorative hair accessory. Her outfit consists of layered garments featuring vibrant colors, notably orange and
+                        blue, complemented by a patterned sash around his waist. He carries a long, ornate sword with a decorative hilt, resting against her arm. Additionally, he has a straw backpack slung over one
+                        shoulder and various pouches attached to her belt, suggesting readiness for travel or adventure. The backdrop is a lush, green landscape, enhancing the adventurous theme of the image.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_5_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Dress the character in medieval knight armor, standing in front of a castle.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_5_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Make the character in the image resemble Peter Pan, dressed in a green outfit and evoking a sense of flying.
+                    </h4>
+                </div>
+               <div class="grid_item">
+                    <img src="static/images/face/input/human_6.jpg" alt="Character 1">
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_6_1.jpg" alt="Character 2">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Dress the character in the image in the combat gear of Desert Fox, displaying a brave and adventurous demeanor.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_6_2.jpg" alt="Character 3">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Dress the character in the image with elf ears and a wizard's robe, transforming them into a mage character from a fantasy world.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_6_3.jpg" alt="Character 4">
+                    <h4 style="font-size: 8px;" class="subtitle has-text-centered">
+                        the man standing confidently in traditional Middle Eastern attire. He is wearing a light, flowing thobe with intricate golden detailing
+                        along the neckline. A white dishdasha is worn underneath, complementing the overall elegant look. The attire is completed
+                        with a black agal and a white ghutrah draped gracefully. The background is plain, emphasizing the cultural significance of the garment. The background is a magnificent palace.
+                    </h4>
+                </div>
+                <div class="grid_item">
+                    <img src="static/images/face/output/human_6_4.jpg" alt="Character 5">
+                    <h4 style="font-size: 12px;" class="subtitle has-text-centered">
+                        Change the character's attire to traditional Russian lace headscarf and long skirt, with a winter snow landscape around her.
+                    </h4>
+                </div>
+            </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Portrait Editing -->
+
+
+<!-- General Editing -->
+<section id="general_section" class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+    <h2 class="title is-3">Flexible instruction or descriptions</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_1_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_1_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">A man in a blue jacket is standing on a street, facing the camera.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_2_1.jpg" alt="Image 2A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_2_2.jpg" alt="Image 2B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Move the location to a desert.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_3_1.jpg" alt="Image 3A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_3_2.jpg" alt="Image 3B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Let this car in {image} drive on Mars, dust kicked up.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_4_1.jpg" alt="Image 4A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_4_2.jpg" alt="Image 4B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">A stuffed bunny is holding an apple and standing on the table.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_5_1.jpg" alt="Image 3A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_5_2.jpg" alt="Image 3B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">a couple getting their picture taken in front of the skyscraper.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_6_1.jpg" alt="Image 4A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_6_2.jpg" alt="Image 4B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Please let her sitting on a wooden boat.</h4>
+        </div>
+    </div>
+    <!-- Additional div blocks for more pairs of images can be added here -->
+
+</div>
+     </div>
+      <div class="item">
+        <!-- Your image here -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_7_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_7_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Make the man standing on road and holding a skateboard.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_8_1.jpg" alt="Image 2A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_8_2.jpg" alt="Image 2B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Let the robot dance.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_9_1.jpg" alt="Image 3A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_9_2.jpg" alt="Image 3B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Change the cloth color from orange to pink.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_10_1.jpg" alt="Image 4A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_10_2.jpg" alt="Image 4B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">A photo of a park bench. The bench is made of wood and painted orange and dark green. Behind the bench is a row of green shrubs. There is a husky lying on a bench.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_11_1.jpg" alt="Image 3A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_11_2.jpg" alt="Image 3B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">A young woman with long red hair and fair skin stands in what appears to be a warehouse. She is wearing a simple red long-sleeved t-shirt and carrying a dark blue tote bag.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_12_1.jpg" alt="Image 4A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_12_2.jpg" alt="Image 4B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">A photo of a small boat moored on calm water, with a black cormorant standing on the stern, spreading its wings. The boat is white, with a Yamaha outboard motor on the stern. The port side of the boat reads 'ME 14XSR'. A man sitting on the boat.</h4>
+        </div>
+    </div>
+    <!-- Additional div blocks for more pairs of images can be added here -->
+
+</div>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_13_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_13_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Add a Santa Claus to the sky in {image}.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_14_1.jpg" alt="Image 2A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_14_2.jpg" alt="Image 2B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">A vintage car parked on a forest path, the car is dark green, the hood
+covere with a blu satin, looks mysterious and elegant. The car is surrounded by fallen leaves, flanked by towering trees, the light through the leaves sprinkled down, creating a quiet, retro atmosphere.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_15_1.jpg" alt="Image 3A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_15_2.jpg" alt="Image 3B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Let the boat run in the Arctic.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_16_1.jpg" alt="Image 4A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_16_2.jpg" alt="Image 4B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Let her touch her hair.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_17_1.jpg" alt="Image 3A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_17_2.jpg" alt="Image 3B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">The ocean wave gets stronger and the man is closer.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <img src="static/images/general/general_18_1.jpg" alt="Image 4A" style="height: 100%; width: auto; margin-right: 10px;">
+                <img src="static/images/general/general_18_2.jpg" alt="Image 4B" style="height: 100%; width: auto;">
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Create a futuristic cityscape with a neon-lit monkey in a cybernetic suit, sitting on a skyscraper at sunset.</h4>
+        </div>
+    </div>
+    <!-- Additional div blocks for more pairs of images can be added here -->
+
+</div>
+     </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- End General Editing -->
+
+
+<!--Local Editing-->
+<section id="local_section" class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+    <h2 class="title is-3">Local Editing</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_1_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_1_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_1_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 9px;" class="subtitle has-text-centered">
+                Two nearly identical dark-colored vases with light blue designs sit on a light gray surface. Each vase features a light blue female figure in a flowing gown, positioned slightly differently on each vase. The necks and bases of the vases have decorative light blue bands with intricate patterns. The background behind the vases is a lighter gray than the surface they rest on. A subtle shadow is cast by each vase onto the surface.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_2_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_2_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_2_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 9px;" class="subtitle has-text-centered">
+                A driver's perspective from inside a car traveling on a highway. A green highway sign indicates Comerica Park, Ford Field, and exit 46. A speed limit sign of 55 mph is visible on the right side of the highway. Construction barrels and traffic cones suggest ongoing roadwork in the median. An overpass crosses above the highway in the background.
+            </h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_3_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_3_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_3_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 9px;" class="subtitle has-text-centered">
+                A chestnut-colored horse with a prominent white blaze on its face stands in the foreground of the image. It looks directly at the camera, and its ears are perked forward. A small, dark brown miniature horse or donkey is visible in the background to the left of the larger horse. A red barn is partially visible behind the small equine. The background consists of a grassy field and a line of trees.
+            </h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_4_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_4_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_4_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 12px;" class="subtitle has-text-centered">By referencing the mask, restore a partial image from the doodle {image} that aligns with the textual explanation: "1 white old owl".</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_5_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_5_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_5_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 12px;" class="subtitle has-text-centered">In line with the details in "A small teddy bear tucked in to the pocket of a suit case", restore the high-quality definition of the mask part of the {image}.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_6_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_6_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_6_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 12px;" class="subtitle has-text-centered">Generate the {image} mask region to real image: A plate is full of broccoli and some type of meat.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_7_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_7_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_7_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 12px;" class="subtitle has-text-centered">Please colorize the selected area mask in {image} without changing anything else.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 160px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_8_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_8_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_8_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 12px;" class="subtitle has-text-centered">Restore the real image using {image}, mask and description: "A bus is driving down a road with cars behind it."</h4>
+        </div>
+    </div>
+    <!-- Additional div blocks for more pairs of images can be added here -->
+
+</div>
+     </div>
+      <div class="item">
+        <!-- Your image here -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 260px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_9_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_9_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_9_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Add a bench is in front brick wall in mask of {image}.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 260px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_10_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_10_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_10_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">Add a dog following her into {image} within the mask.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_11_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_11_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_11_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">I need penknife removed from {image}, according to the mask derived from mask.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_12_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_12_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_12_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">
+                Remove the apple in {image} mask.
+            </h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_13_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_13_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_13_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 16px;" class="subtitle has-text-centered">Add text to {image} mask region, text is 'SPOR'.</h4>
+        </div>
+    </div>
+
+    <div style="flex: 1 1 calc(50% - 20px);">
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; height: 200px; justify-content: center; border: 1px solid #ccc;">
+                <div class="mask_container">
+                    <img src="static/images/local/local_14_1.jpg" alt="Image 1A" style="height: 100%; width: auto; margin-right: 10px;">
+                    <img src="static/images/local/local_14_m.jpg" alt="图片2" class="image1">
+                    <img src="static/images/local/local_14_2.jpg" alt="Image 1B" style="height: 100%; width: auto;">
+                </div>
+            </div>
+            <h4 style="font-size: 14px;" class="subtitle has-text-centered">Detach all texts in the mask zone of {image}.</h4>
+        </div>
+    </div>
+    <!-- Additional div blocks for more pairs of images can be added here -->
+
+        </div>
+     </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- End Local Editing -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{ace++,
+            title = {ACE++: Instruction-Based Image Creation and Editing via Context-Aware Content Filling},
+            author = {Mao, Chaojie and Zhang, Jingfeng and Pan, Yulin and Jiang, Zeyinzi and Han, Zhen and Liu, Yu and Zhou, Jingren},
+            journal = {arXiv preprint arXiv:xxxx.yyyyy},
+            year = {2025}
+        }
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView();
+    }
+</script>
+
+</body>
+</html>
