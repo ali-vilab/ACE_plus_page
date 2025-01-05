@@ -148,14 +148,20 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We report ACE++, an instruction-based diffusion framework that tackles various image generation and editing tasks.
-              Inspired by the input format for the inpainting task proposed by FLUX.1-Fill-dev,
-              we improve the Long-context Condition Unit (LCU) introduced in ACE and extend this input paradigm to any editing and generation tasks.
-              To take full advantage of image generative priors, we develop a two-stage training scheme to minimize the efforts of finetuning powerful text-to-image diffusion models like FLUX.1-dev.
-              In the first stage, we pre-train the model using task data with the 0-ref task from the text-to-image model. There are many models in the community based on the post-training of text-to-image foundational models that meet the training paradigm of the first stage.
-              For instance, FLUX.1-Fill-dev primarily deals with inpainting tasks and can be used as the initialization to accelerate the training process. In the second stage, we fine-tune the above model to support the general instructions using all tasks defined in ACE.
-              To promote the widespread application of ACE++ in different scenarios, we provide a comprehensive set of models that cover both fully fine-tuning and lightweight fine-tuning, while considering general applicability and applicability in vertical scenarios.
-              The qualitative analysis showcases the superiority of ACE++ in terms of generating image quality and prompt following ability.
+            We report ACE++, an instruction-based diffusion framework that tackles various image generation and editing tasks. 
+            Inspired by the input format for the inpainting task proposed by FLUX.1-Fill-dev, we improve the Long-context Condition Unit (LCU) 
+            introduced in ACE and extend this input paradigm to any editing and
+            generation tasks. To take full advantage of image generative priors, we develop
+            a two-stage training scheme to minimize the efforts of finetuning powerful text-to-image diffusion models like FLUX.1-dev. 
+            In the first stage, we pre-train the
+            model using task data with the 0-ref tasks from the text-to-image model. There
+            are many models in the community based on the post-training of text-to-image
+            foundational models that meet this training paradigm of the first stage. For example, FLUX.1-Fill-dev deals primarily with painting tasks and can be used as
+            an initialization to accelerate the training process. In the second stage, we finetune the above model to support the general instructions using all tasks defined
+            in ACE. To promote the widespread application of ACE++ in different scenarios, we provide a comprehensive set of models that cover both full finetuning and
+            lightweight finetuning, while considering general applicability and applicability in
+            vertical scenarios. The qualitative analysis showcases the superiority of ACE++
+            in terms of generating image quality and prompt following ability
           </p>
         </div>
       </div>
